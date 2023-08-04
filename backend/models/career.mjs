@@ -2,21 +2,21 @@ import { Schema, model } from 'mongoose';
 
 const careerOpportunitySchema = new Schema({
     name: String,
+    description: String
 });
 
 const collegeSchema = new Schema({
     name: String,
-    location: String,
+    city: String,
+    state: String
 });
 
 const subFieldSchema = new Schema({
     name: String,
     description: String,
-    necessity: String,
     scope: String,
     careerOpportunities: [careerOpportunitySchema],
-    colleges: [collegeSchema],
-
+    colleges: [collegeSchema]
 });
 
 

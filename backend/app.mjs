@@ -9,6 +9,7 @@ import connectDB from './config/db.mjs';
 import bookmarkRoute from './api/bookmarkRoute.mjs';
 import showBookmark from './api/showbookMark.mjs';
 import addNotes from './api/addNotes.mjs';
+import showNotes from './api/showNotes.mjs';
 import jwt from 'jsonwebtoken'; // Import JWT library
 connectDB();
 
@@ -24,6 +25,7 @@ app.use('/api', userRoute);
 app.use('/api', bookmarkRoute);
 app.use('/api', showBookmark);
 app.use('/api', addNotes);
+app.use('/api', showNotes);
 
 
 

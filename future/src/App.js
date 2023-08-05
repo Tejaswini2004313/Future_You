@@ -9,9 +9,6 @@ import DashBoard from './pages/DashBoard';
 import SubFields from './pages/SubFields';
 import About from './pages/About';
 
-
-
-
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react';
 import { Box, Heading, Text, Button, Image, Flex, Divider, Table, Thead, Tbody, Tr, Th, Td, Select } from '@chakra-ui/react';
 import FloatingBookmark from '../components/FloatingBookMark';
+import FloatingNotes from '../components/FloatingNotes';
 
 export default function SubFields() {
     const { major, subfield } = useParams();
@@ -18,6 +19,7 @@ export default function SubFields() {
             .then((response) => response.json())
             .then((data) => {
                 setsubFieldsData(data);
+                console.log(data.videos);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -45,7 +47,9 @@ export default function SubFields() {
                         <Heading size='lg' p="7">Deep dive into {subFieldsData.name}</Heading>
                         <Spacer />
                         <Image height="100px" src={subFieldsData.image} alt="Career Image" />
+                        <FloatingNotes major={major} subfield={subfield} />
                     </Flex>
+
                 </CardHeader>
                 <CardBody align='center'>
                     <Box>
@@ -132,9 +136,29 @@ export default function SubFields() {
                             </Box>
                         </Box>
                     </Box>
+
                 </CardBody>
+                {/* <CardFooter>
+                    {subFieldsData.video.map((video) => (
+                        <Box key={video.id} p={5}>
+                            <Heading size='md' p={'2'}>Some interesting vedios</Heading>
+                            <Box p={5}>
+                                <iframe
+                                    width="560"
+                                    height="315"
+                                    src={video.link}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </Box>
+                        </Box>
+                    ))}
+                </CardFooter> */}
             </Card>
             <FloatingBookmark major={major} subfield={subfield} />
+
+
 
         </Box>
     );

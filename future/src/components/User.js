@@ -1,5 +1,5 @@
 import React from 'react';
-import jwtDecode from 'jwt-decode'; // Import the jwt-decode library
+import jwtDecode from 'jwt-decode';
 import {
     Drawer,
     DrawerBody,
@@ -10,11 +10,13 @@ import {
     DrawerCloseButton,
     useDisclosure,
     Button,
-    Input,
     Avatar,
     Heading,
-    Box
+    Box,
+    Spacer,
+    Flex,
 } from '@chakra-ui/react';
+import { FiLogOut } from 'react-icons/fi'; // Import the FiLogOut icon
 import LoginSignUp from './UserSignLogin';
 import Bookmark from './Bookmark';
 import Note from './Note';
@@ -23,44 +25,45 @@ export default function User() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = React.useRef();
 
-    // Get the JWT token from localStorage
     const jwtToken = localStorage.getItem('jwtToken');
 
-    // Function to handle logout
     const handleLogout = () => {
-        // Clear the JWT token from localStorage
         localStorage.removeItem('jwtToken');
         onClose();
     };
 
-    // Function to get the username from the JWT token
     const getUsernameFromToken = (token) => {
         try {
-            // Decode the JWT token using jwt-decode
             const decodedToken = jwtDecode(token);
-
-            // Extract the username from the decoded token
             const username = decodedToken.user.name;
-            console.log(decodedToken)
-            console.log(username)
 
             return username;
         } catch (error) {
-            // Handle any decoding errors here
             console.error('Error decoding token:', error);
             return null;
         }
     };
 
-    // Get the username from the token
     const username = jwtToken ? getUsernameFromToken(jwtToken) : null;
     const upperCase = username ? username.toUpperCase() : null;
 
     return (
         <>
             {jwtToken ? (
-                <Button ref={btnRef} onClick={onOpen} variant="ghost">
-                    <Avatar size="sm" name={upperCase} src="/path/to/avatar.jpg" />
+                <Button
+                    ref={btnRef}
+                    onClick={onOpen}
+                    variant="ghost"
+                    size="sm"
+                    fontSize="lg"
+                    _focus={{ outline: 'none' }}
+                >
+                    <Avatar
+                        size="sm"
+                        name={upperCase}
+                        src="/path/to/avatar.jpg"
+                        _hover={{ opacity: 0.8 }}
+                    />
                 </Button>
             ) : (
                 <LoginSignUp />
@@ -73,34 +76,45 @@ export default function User() {
                 finalFocusRef={btnRef}
             >
                 <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerCloseButton />
-                    <DrawerHeader><Avatar size="sm" name={upperCase} src="/path/to/avatar.jpg" /></DrawerHeader>
+                <DrawerContent bg="gray.100">
+
+                    <DrawerHeader borderBottomWidth="1px" bg="blue.500" color="white">
+                        <Flex align="center">
+                            <Avatar
+                                size="sm"
+                                name={upperCase}
+                                src="/path/to/avatar.jpg"
+                                mr={2}
+                            />
+                            <Heading as="h3" size="md">
+                                Welcome, {upperCase}! 👋
+                            </Heading>
+                        </Flex>
+                    </DrawerHeader>
 
                     <DrawerBody>
-
-                        <Heading as="h3" size="md" mb={4}>
-                            Welcome, {upperCase}! 👋
-
-                        </Heading>
-                        {/* Display user's bookmarks */}
-                        <Box>
+                        <Box my={4}>
                             <Bookmark />
                         </Box>
-
-                        {/* Display user's notes */}
-                        <Box>
+                        <Box my={4}>
                             <Note />
                         </Box>
-
                     </DrawerBody>
 
-                    <DrawerFooter>
-
-                        <Button colorScheme="red" onClick={handleLogout}>
+                    <DrawerFooter borderTopWidth="1px">
+                        <Button
+                            colorScheme="red"
+                            leftIcon={<FiLogOut />}
+                            onClick={handleLogout}
+                            mr={2}
+                            _hover={{ opacity: 0.8 }}
+                        >
                             Logout
                         </Button>
-
+                        <Spacer />
+                        <Button onClick={onClose} _hover={{ opacity: 0.8 }}>
+                            Close
+                        </Button>
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>

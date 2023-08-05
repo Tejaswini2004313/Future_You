@@ -29,7 +29,7 @@ export default function Bookmark() {
     };
 
     return (
-        <Card p={3} m={4} boxShadow='md'>
+        <Card p={3} m={4}>
             <CardHeader>
                 <Heading size='md'>Your Bookmarks</Heading>
             </CardHeader>
@@ -43,20 +43,21 @@ export default function Bookmark() {
                     )}
                     {bookmarks &&
                         bookmarks.bookmarks.map((bookmark) => (
-                            <Link key={bookmark._id} to={`/bookmark/${bookmark._id}`}>
+                            <Link key={bookmark._id} to={`/major/${bookmark.major}/${bookmark.subfield}`}>
                                 <Box
                                     p={4}
-                                    borderWidth='1px'
+                                    m={2}
+                                    borderWidth='0.5px'
                                     borderRadius='md'
-                                    borderColor='gray.200'
+
                                     _hover={{ shadow: 'md' }}
                                     cursor='pointer'
                                 >
                                     <Heading size='xs' textTransform='uppercase'>
-                                        {bookmark.major}
+                                        {bookmark.subfield}
                                     </Heading>
                                     <Text pt='2' fontSize='sm'>
-                                        {bookmark.subfield}
+                                        {bookmark.major}
                                     </Text>
                                 </Box>
                             </Link>

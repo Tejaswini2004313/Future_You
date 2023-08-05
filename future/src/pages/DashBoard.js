@@ -24,11 +24,9 @@ export default function DashBoard() {
         setSearchValue(event.target.value);
 
     };
-
     return (
         <Box p={4} width="100%">
             <Flex align="center" justify="center" direction="column">
-                {/* Search Box */}
                 <Box mb={4} width="70%">
                     <InputGroup>
                         <Input placeholder="Search" value={searchValue} onChange={handleSearchChange} />
@@ -39,7 +37,6 @@ export default function DashBoard() {
                         </InputRightElement>
                     </InputGroup>
                 </Box>
-
                 <Box width="75%" p={5}>
                     <Stack spacing={4}>
                         <Flex align="center" justify="center">

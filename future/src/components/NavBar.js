@@ -19,7 +19,8 @@ const Navbar = () => {
         <Box boxShadow="lg" p={5}>
             <Flex mx="auto" align="center">
                 <Box>
-                    <Heading size="md" fontWeight="semibold" color="blue.500">Future You</Heading>
+                    <Link to={'/'}> <Heading size="md" fontWeight="semibold" color="blue.500">Future You</Heading></Link>
+
                 </Box>
                 <Flex ml={10} >
 

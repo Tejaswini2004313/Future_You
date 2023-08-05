@@ -134,7 +134,7 @@ export default function SubFields() {
                     </Box>
                 </CardBody>
             </Card>
-            {/* <FloatingBookmark major={major} subfield={subfield} /> */}
+            <FloatingBookmark major={major} subfield={subfield} />
 
         </Box>
     );

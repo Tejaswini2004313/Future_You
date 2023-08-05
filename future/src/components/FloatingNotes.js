@@ -2,10 +2,11 @@ import React from 'react';
 import { BiBookmark } from 'react-icons/bi';
 
 
+
 const FloatingBookmark = ({ major, subfield }) => {
     const authToken = localStorage.getItem('jwtToken');
     const handleBookmark = () => {
-        fetch('http://localhost:8082/api/addBookmark', {
+        fetch('http://localhost:8082/api/addNotes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

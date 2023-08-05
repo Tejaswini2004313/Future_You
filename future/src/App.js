@@ -8,6 +8,8 @@ import Major from './pages/Major';
 import DashBoard from './pages/DashBoard';
 import SubFields from './pages/SubFields';
 import About from './pages/About';
+import 'buffer';
+
 
 
 function App() {

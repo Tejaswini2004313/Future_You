@@ -18,6 +18,7 @@ export default function Bookmark() {
         }
     };
 
+
     const bookmarks = jwtToken ? getBookMarks(jwtToken) : [];
 
     return (

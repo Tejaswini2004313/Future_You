@@ -17,8 +17,6 @@ export default function Bookmark() {
             return [];
         }
     };
-
-
     const bookmarks = jwtToken ? getBookMarks(jwtToken) : [];
 
     return (

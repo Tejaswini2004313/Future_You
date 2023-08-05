@@ -13,8 +13,6 @@ export default function SubFields() {
     const capSubField = subfield.charAt(0).toUpperCase() + subfield.slice(1);
 
 
-
-
     useEffect(() => {
         fetch(`http://localhost:8082/api/career/${capMajor}/${capSubField}`)
             .then((response) => response.json())
@@ -136,7 +134,7 @@ export default function SubFields() {
                     </Box>
                 </CardBody>
             </Card>
-            <FloatingBookmark major={major} subfield={subfield} />
+            {/* <FloatingBookmark major={major} subfield={subfield} /> */}
 
         </Box>
     );

@@ -18,10 +18,10 @@ const FloatingBookmark = ({ major, subfield }) => {
             .then((data) => {
                 // Handle the response from the server if needed
                 console.log('Bookmark saved:', data);
-                const updatedTokenPayload = jwtDecode(authToken);
-                updatedTokenPayload.bookmarks = data.bookmark; // Assuming the server returns the updated bookmarks
-                const updatedToken = jwt.sign(updatedTokenPayload, 'your-secret-key'); // Replace 'your-secret-key' with your actual secret key for JWT encoding
-                localStorage.setItem('jwtToken', updatedToken);
+                // const updatedTokenPayload = jwtDecode(authToken);
+                // updatedTokenPayload.bookmarks = data.bookmark; // Assuming the server returns the updated bookmarks
+                // const updatedToken = jwt.sign(updatedTokenPayload, 'FutureYou'); // Replace 'your-secret-key' with your actual secret key for JWT encoding
+                // localStorage.setItem('jwtToken', updatedToken);
                 // Update the bookmarks state to reflect the new bookmark
             })
             .catch((error) => {

@@ -32,6 +32,9 @@ class UsersController {
             const payload = {
                 user: {
                     id: user.id,
+                    name: user.name,
+                    bookmark: user.bookmark,
+                    notes: user.notes
                 },
             };
 
@@ -79,6 +82,9 @@ class UsersController {
             const payload = {
                 user: {
                     id: user.id,
+                    name: user.name,
+                    bookmark: user.bookmark,
+                    notes: user.notes
                 }
             };
 

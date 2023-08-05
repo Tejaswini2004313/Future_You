@@ -5,7 +5,6 @@ import { Heading, Text, Button } from '@chakra-ui/react';
 import { Box, Flex, Stack, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-
 export default function Major() {
     const { major } = useParams();
     const [majorsData, setmajorsData] = useState([]);
@@ -13,7 +12,7 @@ export default function Major() {
     const capMajor = major.charAt(0).toUpperCase() + major.slice(1);
 
     useEffect(() => {
-        fetch(`http://localhost:8082/api/career/${capMajor}`) // Remove the colon from here
+        fetch(`http://localhost:8082/api/career/${capMajor}`)
             .then((response) => response.json())
             .then((data) => {
                 // Set the fetched data to the state
@@ -24,45 +23,42 @@ export default function Major() {
             });
     }, []); // Empty dependency array ensures useEffect runs only once on mount
 
-    // console.log(majorsData);
     return (
-        <Card align='center'>
+        <Card align='center' m="5">
             <CardHeader>
-                <Heading size='md'> Explore {capMajor}</Heading>
+                <Heading size='lg'> Explore {capMajor}</Heading>
             </CardHeader>
-            <CardBody>
+            <CardBody width="70%" align='center'>
                 <Text>{majorsData.description}</Text>
+            </CardBody>
+            <CardFooter>
+                <Stack spacing={4} align='center'>
 
-                <Box>
-                    <Stack spacing={4}>
-                        <Flex align="center" justify="center">
-                            {majorsData.subFields.map((subfield, index) => (
+                    <Flex align="center" justify="center">
+                        {majorsData.subFields &&
+                            majorsData.subFields.map((subField, index) => (
                                 <Card key={index} m={'5'} width="300px" align='center'>
                                     <CardHeader>
-                                        <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+                                        <Flex flex="1" gap="4" alignItems="center" >
                                             <Box>
-                                                <Heading size="md">{subfield.name}</Heading>
+                                                <Heading size="md">{subField.name}</Heading>
                                             </Box>
                                         </Flex>
                                     </CardHeader>
 
-                                    <Image height="300px" src={subfield.image} alt="subfield Image" />
+                                    <Image height="200px" src={subField.image} alt="subField Image" />
 
                                     <CardFooter justify="space-between" flexWrap="wrap">
                                         {/* Use the searchValue in the to attribute of the Link */}
                                         <Button flex="1" variant="ghost">
-                                            <Link to={`/major/${subfield.name}`}> Explore </Link>
+                                            <Link to={`/major/${capMajor}/${subField.name}`}> Explore </Link>
                                         </Button>
                                     </CardFooter>
                                 </Card>
                             ))}
-                        </Flex>
-                    </Stack>
-                </Box>
-
-
-            </CardBody>
-
+                    </Flex>
+                </Stack>
+            </CardFooter>
         </Card>
     );
 }

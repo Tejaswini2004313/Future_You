@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Future You
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table Of Contents
 
-## Available Scripts
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [Features](#features)
+* [Usage](#usage)
 
-In the project directory, you can run:
 
-### `yarn start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![White Blue Professional Website Developer LinkedIn Banner](https://github.com/shruti-2412/Future_You/assets/99483160/9bb206c4-ce7a-45f3-9299-fca83e22a83e)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Future You is a career guidance website designed to provide students with information about new and emerging career fields that are not commonly explored. The platform aims to help students make informed decisions about their future careers by showcasing various unconventional and promising career paths. The project is built using modern web technologies and follows a client-server architecture, utilizing MongoDB Atlas as the database, ReactJS for the frontend, and ExpressJS for the backend.
 
-### `yarn test`
+## Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img alt="Express.js" src="https://img.shields.io/badge/express.js%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> 
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install Node.js and npm:  
+If you haven't already installed Node.js, you can download and install it from the official website: https://nodejs.org
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Clone the project:  
+Use Git to clone the project from a repository or download the project's source code if it's available as a ZIP file.
 
-### `yarn eject`
+3. Navigate to the project directory:  
+Open a terminal or command prompt and change your working directory to the root folder of the React project.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Install project dependencies:  
+In the terminal, run the following command to install the required dependencies listed in the package.json file:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Run the development server:  
+Use the following command to start the development server:
+```bash
+yarn start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Access the application:  
+After running the above command, the development server should start, and your React application will be accessible at http://localhost:3000 by default. If port 3000 is already in use, the development server might choose a different port, and it will be displayed in the terminal.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Features  
+- A user-friendly web application that allows students to explore career fields in all subjects.
+- Provide comprehensive information about each career field, including job descriptions, required qualifications, skills, and potential career paths.
+- Offer resources such as articles and videos of the professionals to give students a deeper understanding of each career field.
+- Regularly update the application with new career fields, emerging trends, and relevant industry information.
+- A personal dashboard for students where they can bookmark important pages from the website and a personalized note-taking section 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

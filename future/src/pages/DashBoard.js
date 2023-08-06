@@ -26,7 +26,7 @@ export default function DashBoard() {
     };
     return (
         <Box p={4} width="100%">
-            <Flex align="center" justify="center" direction="column">
+            <Flex align="center" justify="center" direction="column" >
                 <Box mb={4} width="70%">
                     <InputGroup>
                         <Input placeholder="Search" value={searchValue} onChange={handleSearchChange} />
@@ -54,7 +54,7 @@ export default function DashBoard() {
 
                                     <CardFooter justify="space-between" flexWrap="wrap">
                                         {/* Use the searchValue in the to attribute of the Link */}
-                                        <Button flex="1" variant="ghost">
+                                        <Button flex="1" >
                                             <Link to={`/major/${career.name}`}> Explore </Link>
                                         </Button>
                                     </CardFooter>

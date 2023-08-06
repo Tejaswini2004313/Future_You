@@ -4,6 +4,7 @@ import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react
 import { Box, Heading, Text, Button, Image, Flex, Divider, Table, Thead, Tbody, Tr, Th, Td, Select } from '@chakra-ui/react';
 import FloatingBookmark from '../components/FloatingBookMark';
 import FloatingNotes from '../components/FloatingNotes';
+import YouTube from 'react-youtube';
 
 export default function SubFields() {
     const { major, subfield } = useParams();
@@ -19,7 +20,7 @@ export default function SubFields() {
             .then((response) => response.json())
             .then((data) => {
                 setsubFieldsData(data);
-                console.log(data.videos);
+                console.log(data.video);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -138,23 +139,27 @@ export default function SubFields() {
                     </Box>
 
                 </CardBody>
-                {/* <CardFooter>
+                <CardFooter>
+                    <Heading size='md' p={'2'}>Some interesting videos</Heading>
                     {subFieldsData.video.map((video) => (
-                        <Box key={video.id} p={5}>
-                            <Heading size='md' p={'2'}>Some interesting vedios</Heading>
-                            <Box p={5}>
-                                <iframe
-                                    width="560"
-                                    height="315"
-                                    src={video.link}
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </Box>
+                        console.log(video),
+                        <Box key={video} p={5}>
+                            <YouTube
+                                videoId={video}
+                                opts={{
+                                    height: '315',
+                                    width: '560',
+                                    playerVars: {
+                                        autoplay: 0, // Set to 1 for autoplay
+                                        controls: 1,
+                                        rel: 0,
+                                    },
+
+                                }}
+                            />
                         </Box>
                     ))}
-                </CardFooter> */}
+                </CardFooter>
             </Card>
             <FloatingBookmark major={major} subfield={subfield} />
 

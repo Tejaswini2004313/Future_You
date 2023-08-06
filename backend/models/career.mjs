@@ -11,12 +11,13 @@ const collegeSchema = new Schema({
     state: String
 });
 
+
 const subFieldSchema = new Schema({
     name: String,
     description: String,
     scope: String,
     image: String,
-    video: String,
+    video: [String],
     careerOpportunities: [careerOpportunitySchema],
     colleges: [collegeSchema]
 });

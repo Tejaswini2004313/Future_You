@@ -56,6 +56,8 @@ After running the above command, the development server should start, and your R
 - A personal dashboard for students where they can bookmark important pages from the website and a personalized note-taking section 
 
 ## Usage
+![image 2](https://github.com/isha-73/Future_You/assets/99483160/3e587497-7656-4a07-98fa-2e8b0e9157fe)
 
+![image 5](https://github.com/isha-73/Future_You/assets/99483160/0d407dd2-d79f-4acd-a9cf-9a095b79015c)
 
-
+![image 3](https://github.com/isha-73/Future_You/assets/99483160/5d9c080b-9f7d-49f7-a732-0db43cfe9d33)
